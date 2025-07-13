@@ -1,0 +1,145 @@
+<!--
+  Generated template for the CheckoutProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>checkout-products</ion-title>
+  </ion-navbar>
+</ion-header>
+ --> 
+
+ <ion-content padding>
+
+   <div class="container">  
+      <ion-row>
+        <ion-col>
+          <div><ion-icon name="ios-arrow-back" (click)="back()"></ion-icon> </div>
+        </ion-col>
+        <ion-col col-8>
+          <div  text-center>
+            <h2>Checkout</h2>
+          </div> 
+        </ion-col>
+        <ion-col>
+          <!-- <div><ion-icon name="ios-cart" (click)="viewShoppingCart()"></ion-icon> </div> -->
+        </ion-col>
+      </ion-row>
+   </div>
+
+     <div text-left><h4>Location</h4></div>
+
+    <ion-row>
+      <ion-col col-2>
+        <div><ion-icon name="compass"></ion-icon></div>
+      </ion-col> 
+
+      <ion-col col-10>
+        <div>Montalban Rizal</div> 
+      </ion-col>
+     
+    </ion-row> 
+
+  <ion-grid>
+    
+   
+    <ion-list  *ngFor ="let data of items">
+    <ion-card> 
+
+      <ion-row class="ion-align-items-start">
+          <ion-col col-6>
+          <div> 
+            <ion-thumbnail item-start>
+     <img src="{{'http://192.168.43.163/livestockv20/' + data.Product_Image}}">
+    </ion-thumbnail><!-- for dummy data only -->
+            
+          </div>
+        </ion-col>
+          
+          <ion-col col-6>
+          <div text-left> 
+           <!-- for dummy data only --> 
+          {{data.Sub_Category}} {{data.Description}}<br> 
+          Stock: {{data.Stock}}        <br> 
+          ₱{{data.Price | number : '1.2-2'}}     <br>
+            
+          
+             
+          </div>
+        </ion-col>  
+        </ion-row>   
+
+      </ion-card>
+
+
+    <ion-row>
+      <ion-col col-8>
+        <div>Total Order: (Quntity:{{data.Quantity}} items) </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>₱{{data.Subtotal | number : '1.2-2'}}</div>
+      </ion-col>
+      
+    </ion-row> 
+</ion-list>
+    <ion-row>
+      <ion-col col-12>
+        <div class="note">Note: Minimum order is 5000 and must have 25% Downpayment </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <div text-left>
+          Other Charges<br>
+          Other Charges<br>
+      
+           
+        </div>
+      </ion-col> 
+
+      <ion-col>
+        <div text-left>
+          ₱100 <br>
+          ₱100  <br>
+           
+        </div>
+      </ion-col>
+    </ion-row>   
+      <ion-row>
+      <ion-col>
+        Down Payment :₱{{this.downpercent | number : '1.2-2'}} via {{this.payment}}
+      </ion-col>
+
+    </ion-row> 
+     <ion-row>
+      
+        <ion-item>
+        <ion-label fixed>Down</ion-label>
+        <ion-input type="text" [(ngModel)]="down"></ion-input>
+        </ion-item>
+      
+
+    </ion-row> 
+
+
+
+    <ion-row>
+      <ion-col col-7>
+        <div><p>Total Payment: ₱{{this.total | number : '1.2-2'}}</p></div> 
+       
+      </ion-col> 
+
+      <ion-col col-5>
+        <div><button ion-button large color="dark" (click)="bayadmuna()"> CHECKOUT </button></div>
+      </ion-col> 
+
+    </ion-row>  
+
+    
+
+
+  </ion-grid>
+</ion-content>

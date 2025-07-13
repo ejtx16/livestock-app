@@ -1,0 +1,67 @@
+
+<ion-content  color="primary">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <!-- <div text-center>
+            <h3>Create your account!</h3>
+          </div> -->
+          <div padding>
+            <ion-item>
+              <ion-label floating>First Name</ion-label>
+              <ion-input type="text"  [(ngModel)] ="firstname" ></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label floating>Middle Initial</ion-label>
+              <ion-input type="text"  [(ngModel)] ="middle" ></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label floating>Last Name</ion-label>
+              <ion-input type="text"  [(ngModel)] ="lastname"></ion-input>
+            </ion-item>  
+            <ion-item>
+              <ion-label floating>BirthDate</ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="birthdate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Address</ion-label>
+              <ion-input type="text"  [(ngModel)] ="address" ></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label floating>Contact Number</ion-label>
+              <ion-input type="number"  [(ngModel)] ="contact" ></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label floating>Email</ion-label>
+              <ion-input type="email" color="white" [(ngModel)] ="email" ></ion-input>
+            </ion-item> 
+            <ion-item justify-content-end> 
+            <ion-label floating>Password</ion-label>
+            <ion-input  [type]="showPassword ? 'text' : 'password'" clearOnEdit="false" [(ngModel)] ="password" ></ion-input>
+            <button class="passTogggle" (click)="onPasswordToggle()" ion-button clear small item-end icon-only >
+              <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+            </button>
+          </ion-item>
+          
+            <!-- <ion-input type="text"  [(ngModel)] ="firstname" placeholder="First Name"></ion-input>
+            <ion-input type="text"  [(ngModel)] ="middle" placeholder="Middle Initial"></ion-input>
+            <ion-input type="text"  [(ngModel)] ="lastname" placeholder="Last Name"></ion-input>
+            <ion-input type="text"  [(ngModel)] ="address" placeholder="Address"></ion-input>
+            <ion-input type="text"  [(ngModel)] ="contact" placeholder="Contact Number"></ion-input>
+            <ion-input type="text" color="white" [(ngModel)] ="email" placeholder="Email"></ion-input>
+            <ion-input type="Password" fixed color="black" [(ngModel)] ="password" placeholder="Password"></ion-input> -->
+           
+          </div>
+          <div padding>
+            <button ion-button color="primary" (click)=next(); justify-content-center align-items-end >Next</button> 
+            <p>NOTE: Password must be 8-characters above and 
+              have Lower Letter and 
+              and have Capital Letter and have Number and have Special character
+            </p>
+          </div> 
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

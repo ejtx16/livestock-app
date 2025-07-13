@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-navbar class="danger">
+    <ion-title>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      Livestock 
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding> 
+   <ion-row>
+      <ion-col>
+        <div><ion-icon name="ios-arrow-back" (click)="back()" item-left></ion-icon> </div>
+      </ion-col>
+      <ion-col col-8>
+        <div  text-center>
+          <h2>Livestock</h2>
+        </div> 
+      </ion-col>
+      <ion-col>
+    
+      </ion-col>
+    </ion-row>
+
+<ion-searchbar type="text" placeholder="Search for commercial/native chickens" (keyup)="updateFilter($event)" > </ion-searchbar>
+<ion-list >
+    <ion-item  *ngFor ="let data of rows" (click)="buyProduct(data)">
+        <ion-card>
+        <img src="{{'http://192.168.43.163/livestockv20/' + data.Product_Image}}">
+        <ion-card-content> 
+          <ion-card-title><b>{{data.Sub_Category}}</b></ion-card-title> 
+          <ion-card-title><b>{{data.Description}}</b></ion-card-title>  
+          <ion-card-title><b>Live weight:{{data.Kilo}}</b></ion-card-title>
+          <ion-card-title>Seller name: {{data.Last_Name}}, {{data.First_Name}}</ion-card-title> 
+          <ion-card-title>Payment: {{data.Payment}}</ion-card-title> 
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+</ion-list>
+</ion-content>

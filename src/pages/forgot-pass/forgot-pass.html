@@ -1,0 +1,43 @@
+<!--
+  Generated template for the ForgotPassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-title>forgot-pass</ion-title> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding color="primary"> 
+  <ion-grid>
+    <ion-row> 
+        <ion-col width-100 text-center> 
+          <img src="assets/imgs/forgotpass.png" height='300' width='300' alt="">
+        </ion-col> 
+    </ion-row>    
+
+     <ion-row> 
+        <ion-col width-100>
+          <div text-center>  
+              <h4>Forgot Your Password?</h4> 
+              <p>Enter your Email below to change your password:</p>
+              <ion-item no-lines>
+              
+                <ion-input placeholder="Email" class="email" type="email" color="primary" [(ngModel)]="email"></ion-input>
+              
+              </ion-item> 
+     
+          </div>
+        </ion-col> 
+    </ion-row>   
+    <br>
+    <ion-row text-center> 
+      <ion-col width-25>
+        <button ion-button color="secondary" (click)=forgotPass(); justify-content-center align-items-end >SEND<ion-icon name="mail"></ion-icon></button> 
+      </ion-col> 
+    </ion-row>  
+      
+  </ion-grid>
+</ion-content>

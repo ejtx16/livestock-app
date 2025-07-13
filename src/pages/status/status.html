@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar> 
+    <ion-row>
+      <ion-col>
+        <div><ion-icon name="ios-arrow-back" (click)="back()"></ion-icon> </div>
+      </ion-col>
+      <ion-col col-8>
+        <div  text-center>
+          <h2>Status</h2>
+        </div> 
+      </ion-col>
+      <ion-col>
+        <!-- <div><ion-icon name="ios-cart" (click)="viewShoppingCart()"></ion-icon> </div> -->
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+   <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button value="down"  (click)="down()">
+        Down Payment
+      </ion-segment-button>
+      <ion-segment-button value="ship"  (click)="ship()">
+        to Ship
+      </ion-segment-button>
+      <ion-segment-button  value="receive" (click)="receive()">
+        to Receive
+      </ion-segment-button>
+      <ion-segment-button  value="complete" (click)="complete()">
+        Completed
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]="status">
+	<ion-list *ngSwitchCase="'down'">
+		<ion-item  *ngFor ="let data of downRows" (click)="onActivate(data)">
+	      <h2>{{data.ID}}</h2>
+	      <p>{{data.Date}}</p>
+    </ion-item>
+	</ion-list>
+  <ion-list *ngSwitchCase="'ship'">
+     <ion-item *ngFor ="let data of shipRows" (click)="onActivate(data)">
+        <h2>{{data.ID}}</h2>
+	      <p>{{data.Date}}</p>
+    </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'receive'">
+      <ion-item *ngFor ="let data of receiveRows" (click)="onActivate(data)">
+        <h2>{{data.ID}}</h2>
+	      <p>{{data.Date}}</p>
+    </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'complete'">
+      <ion-item *ngFor ="let data of completeRows" (click)="onActivate(data)">
+        <h2>{{data.ID}}</h2>
+	      <p>{{data.Date}}</p>
+    </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

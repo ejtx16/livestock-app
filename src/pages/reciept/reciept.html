@@ -1,0 +1,118 @@
+<!--
+  Generated template for the RecieptPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Official Reciept</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+           Farm Name
+          </ion-col>
+          <ion-col col-6>
+           {{this.farmname}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Owners Name:
+          </ion-col>
+          <ion-col>
+           {{this.firstName}} {{this.lastName}}
+          </ion-col>
+         
+        </ion-row> 
+        ============================================
+        <ion-row>
+          <ion-col>
+            <div>Category</div>
+          </ion-col>
+          <ion-col>
+            <div>Sub Category</div>
+          </ion-col>
+          <ion-col>
+            <div>Quantity</div>
+          </ion-col>
+          <ion-col>
+            <div>Price</div>
+          </ion-col>
+        </ion-row>
+          <ion-row *ngFor ="let data of items">
+            <ion-col>
+              {{data.category}}
+            </ion-col>
+            <ion-col>
+              {{data.Sub_Category}}
+            </ion-col>
+            <ion-col>
+              {{data.Quantity}}
+            </ion-col>
+            <ion-col>
+              ₱{{data.Price | number : '1.2-2'}}
+            </ion-col>
+          </ion-row>
+        =============================================
+        <ion-row>
+          <ion-col col-6>
+            <div>Subtotal (Vatable 12%) </div>
+          </ion-col>
+          <ion-col col-6> 
+            <div>{{this.subtotal | number : '1.2-2'}}</div>
+        
+          </ion-col>
+        </ion-row>
+       <ion-row>
+        <ion-col col-6>
+              <div>Plus 12% Vat</div>
+          </ion-col>
+          <ion-col col-6>
+            <div> ₱{{this.vat}}</div>
+          
+          </ion-col>
+        </ion-row>  
+        <ion-row>
+          <ion-col col-6>
+            <div>Other Charge(Shipping fee)</div>
+          </ion-col>
+          <ion-col col-6>
+        
+            <div>₱{{this.other | number : '1.2-2'}}</div>
+            <!-- ₱{{this.other | number : '1.2-2'}} -->
+          </ion-col>
+        </ion-row>  
+        <ion-row>
+          <ion-col col-6>
+            <div>Total amount to be paid</div>
+          </ion-col>
+          <ion-col col-6>
+            <div>₱{{this.total | number : '1.2-2'}}</div>
+            <!-- ₱{{this.total | number : '1.2-2'}} -->
+          </ion-col>
+        </ion-row>   
+        =============================================
+         <ion-row>
+          <ion-col offset-12>
+            <div>This Serves As your Official Receipt</div>
+          </ion-col>
+         
+        </ion-row>    
+        <ion-row>
+        
+       
+            <ion-col offset-12>
+              <div text-center> <button ion-button large (click)="done()">Done</button></div>
+            </ion-col>
+         
+        </ion-row>   
+
+
+
+      </ion-grid>
+    </ion-content>

@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <!-- <button menuClose ion-item *ngFor="let p of pages">
+                <ion-icon  name="{{p.icon}}" item-left></ion-icon>{{p.title}}  -->
+
+
+            <button ion-item (click)="cartPage() ">   <ion-icon name="ios-cart" item-left></ion-icon>
+                My Cart
+            </button>
+            <button ion-item (click)="statusPage() ">   <ion-icon name="md-list-box" item-left></ion-icon>
+                MyPurchases
+            </button>
+            
+            <button ion-item (click)="signOut()">     <ion-icon ios="ios-log-out" md="md-log-out" color="dark" item-left></ion-icon>
+                Logout
+            </button>
+
+
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage " #content swipeBackEnabled="false ">
+</ion-nav>

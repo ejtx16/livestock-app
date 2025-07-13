@@ -1,0 +1,123 @@
+<!--
+  Generated template for the ShoppingCartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>shopping-cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+</ion-content> --> 
+
+<!--
+  Generated template for the BuyProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Shopping cart</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>  
+  <div class="container">  
+    <ion-row>
+      <ion-col>
+        <div><ion-icon name="ios-arrow-back" (click)="back()"></ion-icon> </div>
+      </ion-col>
+      <ion-col col-8>
+        <div  text-center>
+          <h2>My Items</h2>
+        </div> 
+      </ion-col>
+      <ion-col>
+        <!-- <div><ion-icon name="ios-cart" (click)="viewShoppingCart()"></ion-icon> </div> -->
+      </ion-col>
+    </ion-row>
+
+    
+ 
+ 
+  </div>
+  <ion-grid>
+    
+   
+    <ion-list  *ngFor ="let data of rows">
+    <ion-card> 
+
+      <ion-row class="ion-align-items-start">
+          <ion-col col-6>
+          <div> 
+            <ion-thumbnail item-start>
+     <img src="{{'https://livestocksph.000webhostapp.com/' + data.Product_Image}}">
+    </ion-thumbnail><!-- for dummy data only -->
+            
+          </div>
+        </ion-col>
+          
+          <ion-col col-6>
+          <div text-left> 
+           <!-- for dummy data only --> 
+          {{data.Sub_Category}} {{data.Description}}<br> 
+          Stock: {{data.Stock}}        <br> 
+          ₱{{data.Price}}     <br>
+            
+          
+             
+          </div>
+        </ion-col>  
+        </ion-row>   
+
+      </ion-card>
+
+
+    <ion-row>
+      <ion-col col-8>
+        <div>Total Order: (Quntity:{{data.Quantity}} items) </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>₱{{data.Subtotal}}</div>
+      </ion-col>
+      
+    </ion-row> 
+</ion-list>
+ <ion-row>
+      <ion-col>
+        <div text-left>
+          Merchant SubTotal<br>
+          Shipping SubTotal  <br>
+      
+           
+        </div>
+      </ion-col> 
+
+      <ion-col>
+        <div text-left>
+          ₱100 <br>
+          ₱100  <br>
+           
+        </div>
+      </ion-col>
+    </ion-row> 
+<ion-row>
+      <ion-col col-7>
+        <div><p>Total Payment:</p></div> 
+       
+      </ion-col> 
+
+      <ion-col col-5>
+        <div> ₱{{this.total}}</div>
+      </ion-col> 
+
+    </ion-row>  
+  </ion-grid>
+
+</ion-content>
+

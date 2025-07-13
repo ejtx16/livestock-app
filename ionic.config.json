@@ -1,0 +1,7 @@
+{
+  "name": "myListock",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

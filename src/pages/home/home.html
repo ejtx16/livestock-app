@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar class="danger">
+    <ion-title>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      Livestock 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+<ion-list >
+    <ion-item  *ngFor ="let data of rows" (click)="onActivate(data)">
+      <ion-card>
+        <img src="{{'http://192.168.43.163/livestockv20/' + data.Image}}">
+        <ion-card-content>
+          <ion-card-title>{{data.Category}}</ion-card-title>
+          <p text-wrap>{{data.DESCRIPTION}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+</ion-list>
+</ion-content>

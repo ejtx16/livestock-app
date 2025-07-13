@@ -1,0 +1,106 @@
+<!--
+  Generated template for the ShoppingCartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>shopping-cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+</ion-content> --> 
+
+<!--
+  Generated template for the BuyProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Shopping cart</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>  
+  <div class="container">  
+    <ion-row>
+      <ion-col>
+        <div><ion-icon name="ios-arrow-back" (click)="back()"></ion-icon> </div>
+      </ion-col>
+      <ion-col col-8>
+        <div  text-center>
+          <h2>Shopping Cart</h2>
+        </div> 
+      </ion-col>
+      <ion-col>
+        <!-- <div><ion-icon name="ios-cart" (click)="viewShoppingCart()"></ion-icon> </div> -->
+      </ion-col>
+    </ion-row>
+
+    
+ 
+ 
+  </div>
+ 
+  <ion-grid >
+    <ion-list radio-group [(ngModel)] ="selection">
+    <ion-list *ngFor ="let row of sellers">
+     
+        <ion-label>{{row.First_Name}} {{row.Last_Name}}</ion-label>
+        <ion-radio checked="false" value="{{row.Seller_ID}}"></ion-radio>
+    <ion-list  *ngFor ="let data of rows">
+      <ion-row class="ion-align-items-start; let i = index" [attr.data-index]="i">
+      <ion-col col-6>
+          <div *ngIf=" data.Seller_ID == row.Seller_ID"> 
+            <ion-thumbnail item-start>
+     <img src="{{'http://192.168.43.163/livestockv20/' + data.Product_Image}}">
+    </ion-thumbnail><!-- for dummy data only -->
+            
+          </div>
+        </ion-col>
+      <ion-col col-6>
+          <div *ngIf=" data.Seller_ID == row.Seller_ID" text-left> 
+           <!-- for dummy data only --> 
+          <ion-checkbox color="primary" (click)="selectItem(data)" [(ngModel)]="data.checked"></ion-checkbox><br>
+          {{data.Sub_Category}} {{data.Description}}<br> 
+          Stock: {{data.Stock}}        <br> 
+          ₱{{data.Price | number : '1.2-2'}}     <br>
+          Quntity:{{data.Quantity}}      <br> 
+          SubTotal:{{data.Price*data.Quantity | number : '1.2-2'}}    <br> 
+            
+          
+             
+          </div>
+        </ion-col>   
+      </ion-row>
+    </ion-list>
+  </ion-list>
+</ion-list>
+ 
+
+<ion-row>
+<!-- 
+      <ion-col col-6>
+        <div><button ion-button large color="dark" (click)="selectRdo()"> selected </button></div>
+      </ion-col>
+ -->
+    </ion-row>
+    <ion-row>
+
+      <ion-col col-6>
+        <div><button ion-button large color="dark" (click)="checkOut()"> CHECKOUT </button></div>
+      </ion-col>
+      <ion-col col-6>
+        <div><button ion-button large color="dark" (click)="removeItem()"> REMOVE ITEM </button></div>
+      </ion-col> 
+
+    </ion-row> 
+</ion-grid>
+
+</ion-content>
+
